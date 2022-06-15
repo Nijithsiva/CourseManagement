@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>StudentPage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="prevent()">
+	<table class="center">
+		<tr>
+			<td><form action="StudentServlet" method="post">
+					<input type="submit" value="Course Overview" name="courseOverview">
+				</form></td>
+			<td><a type="button" href="#enrollcousre"
+				onclick="enrollCourseClick()" style="text-decoration: none">Enroll
+					Course</a></td>
+			<td><form action="StudentServlet" method="post" id="mycourse"
+					name="mycourse">
+					<input type="submit" id="mycourseSubmit" name="mycourseSubmit"
+						value="My Course">
+				</form></td>
+			<td><a type="button" href="#coursedetails"
+				onclick="coursedetailsClick()" style="text-decoration: none">Course
+					Enrolled Details</a></td>
+			<td><form action="Logout" method="get">
+					<input type="submit" value="Logout" />
+				</form></td>
+		</tr>
+	</table>
+	<form action="StudentServlet" method="post" id="enrollcousre"
+		name="enrollcousre" style="display: none">
+		<table class="center">
+			<tr>
+				<td>Enter Course Id:</td>
+				<td><input type="text" id="enrollcourseId"
+					name="enrollcourseId" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" id="enrollcourseIdSubmit"
+					name="enrollcourseIdSubmit" value="enroll"
+					onclick="return validateEnrollCourse()"></td>
+			</tr>
+		</table>
+	</form>
+	<form action="StudentServlet" method="post" id="coursedetails"
+		name="coursedetails" style="display: none">
+		<table class="center">
+			<tr>
+				<td>Enter Course Id:</td>
+				<td><input type="text" id="coursedetailsId"
+					name="enrollcourseId" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" id="coursedetailsSubmit"
+					name="coursedetailsSubmit" value="View"
+					onclick="return validateCourseDetails()"></td>
+			</tr>
+		</table>
+
+	</form>
+	<script src="validate.js"></script>
+</body>
+</html>

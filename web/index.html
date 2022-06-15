@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>StudentCourseManagement</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Student Course Management System</h1>
+	<table class="center">
+		<tr>
+			<td><a type="button" href="#admin" onclick="adminClick()"
+				style="text-decoration: none">Admin login</a></td>
+			<td><a type="button" href="#studentregister"
+				onclick="studentregisterClick()" style="text-decoration: none">Student
+					Register</a></td>
+			<td><a type="button" href="#studentlogin"
+				onclick="studentloginClick()" style="text-decoration: none">Student
+					login</a></td>
+		</tr>
+	</table>
+	<form action="Login" method="post" id="admin" style="display: none"
+		name="admin">
+		<table class="center">
+			<tr>
+				<td>User:</td>
+				<td><input type="text" name="name" required></td>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" value="Login"></td>
+			</tr>
+		</table>
+	</form>
+	<form action="Login" method="post" id="studentregister"
+		style="display: none" name="studentregister">
+		<table class="center">
+			<tr>
+				<td>Enter id:</td>
+				<td><input type="text" name="s_id" required></td>
+			</tr>
+			<tr>
+				<td>Enter name:</td>
+				<td><input type="text" name="s_name" required></td>
+			</tr>
+			<tr>
+				<td>Enter Semester:</td>
+				<td><input type="text" name="s_sem" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="register" value="Register"
+					onclick="return validateStudentRegister()"></td>
+			</tr>
+		</table>
+	</form>
+	<form action="Login" method="post" id="studentlogin"
+		style="display: none" name="studentlogin">
+		<table class="center">
+			<tr>
+				<td>Enter id:</td>
+				<td><input type="text" name="l_s_id" required></td>
+			</tr>
+			<tr>
+				<td>Enter name:</td>
+				<td><input type="text" name="l_s_name" required></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" name="login" value="login"
+					onclick="return validateStudentLogin()"></td>
+			</tr>
+		</table>
+	</form>
+	<script src="validate.js"></script>
+</body>
+</html>

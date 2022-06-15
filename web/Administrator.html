@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Administrator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="prevent()">
+	<h1>Welcome Admin</h1>
+	<table class="center">
+		<tr>
+			<td><a type="button" href="#addstudent" onclick="aClick()"
+				style="text-decoration: none;">AddStudent</a></td>
+			<td><a type="button" href="#removestudent" onclick="bClick()"
+				style="text-decoration: none;">RemoveStudent</a></td>
+			<td><a type="button" href="#addcourse" onclick="cClick()"
+				style="text-decoration: none">AddCourse</a></td>
+			<td><a type="button" href="#removecourse" onclick="dClick()"
+				style="text-decoration: none;">RemoveCourse</a></td>
+			<td>
+				<form action="Myservlet" method="post" id="" name="listcourse">
+					<input type="submit" value="List of Course" name="tableCourse">
+				</form>
+			</td>
+			<td>
+				<form action="Myservlet" method="post" id="" name="liststudent">
+					<input type="submit" value="List of Student" name="tableStudent">
+				</form>
+			</td>
+			<td><form action="Logout" method="get" style="float: right">
+					<input type="submit" value="Logout" />
+				</form></td>
+		</tr>
+	</table>
+	<form id="addstudent" style="display: none" action="Myservlet"
+		method="post" name="addstudent">
+		<table class="center">
+			<tr>
+				<td><p>
+						<b>Enter id:</b>
+					</p></td>
+				<td><input type="text" name="sid" required></td>
+			</tr>
+			<tr>
+				<td><p>
+						<b>Enter name:</b>
+					</p></td>
+				<td><input type="text" name="sname" required></td>
+			</tr>
+			<tr>
+				<td><p>
+						<b>Enter semester:</b>
+					</p></td>
+				<td><input type="text" name="ssem" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit" name="addstudentsubmit"
+					onclick="loadDoc()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<form id="removestudent" style="display: none" action="Myservlet"
+		method="post" name="removestudent">
+		<table class="center">
+			<tr>
+				<td><p>
+						<b>Enter Student id:</b>
+					</p></td>
+				<td><input type="text" name="deletesid" required></td>
+			<tr>
+				<td><input type="submit" value="submit"
+					name="removestudentsubmit" onclick="return validateRemoveStudent();findTurotial();"></td>
+			</tr>
+		</table>
+	</form>
+	<form id="addcourse" style="display: none" action="Myservlet"
+		method="post" name="addcourse">
+		<table class="center">
+			<tr>
+				<td><p>
+						<b>Enter Course id:</b>
+					</p></td>
+				<td><input type="text" name="addcourse_id" required></td>
+			</tr>
+			<tr>
+				<td><p>
+						<b>Enter Course Name:</b>
+					</p></td>
+				<td><input type="text" name="addcourse_name" required></td>
+			<tr>
+				<td><input type="submit" value="submit" name="addcourse"
+					onclick="return validateAddCourse();"></td>
+			</tr>
+		</table>
+	</form>
+	<form id="removecourse" style="display: none" action="Myservlet"
+		method="post" name="removecourse">
+		<table class="center">
+			<tr>
+				<td><p>
+						<b>Enter Course id:</b>
+					</p></td>
+				<td><input type="text" name="deletecourse" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit" name="removecourse"
+					onclick="return validateRemoveCourse()"></td>
+			</tr>
+		</table>
+	</form>
+	<script src="validate.js"></script>
+        <script>
+	let x;
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', 'Myservlet');
+	xhr.send(null);
+	xhr.onreadystatechange = function () {
+		  var DONE = 4; // readyState 4 means the request is done.
+		  var OK = 200; // status 200 is a successful return.
+		  if (xhr.readyState === DONE) {
+		    if (xhr.status === OK) {
+		      x=xhr.responseText; // 'This is the returned text.'
+		    } else {
+		      console.log('Error: ' + xhr.status); // An error occurred during the request.
+		    }
+		  }
+		};
+	function loadDoc(){
+		alert(x);
+	}
+	</script>
+</body>
+</html>

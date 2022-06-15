@@ -1,0 +1,64 @@
+@charset "ISO-8859-1";
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Full-width inputs */
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: blue;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 40px;
+    text-align:center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+h3{
+	color: red;
+	text-align:center;
+}
+p{
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+#enroll{
+	color: green;
+	text-align:center;
+}
+#delete{
+	color: red;
+	text-align:center;
+}
+.footerposition {
+	left: 100px;
+	right: 0px;
+	bottom: 25px;
+	position: static;
+	visibility: visible;
+}
